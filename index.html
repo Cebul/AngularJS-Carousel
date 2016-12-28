@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KRD-IT_Slider</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="app">
+
+  <section class="main" ng-controller="myController">
+    <div class="container-fluid fill">
+      <div class="fill">
+        <carousel id="myCarousel" interval="myInterval" no-pause="true">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img class="image-cl" ng-src="{{slide.image}}">
+          </slide>
+          <div class="carousel-caption">{{ getActiveSlide() }}/{{ totalItems }}</div>
+       </carousel>
+      </div>
+    </div><!-- container -->
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
